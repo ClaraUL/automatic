@@ -8,7 +8,7 @@ import re
 import datetime
 import time
 import sys
-
+import ddddocr
 
 class ClockIn(object):
     """Hit card class
@@ -33,6 +33,7 @@ class ClockIn(object):
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
         }
         self.sess = requests.Session()
+        self.captcha_url = 'https://healthreport.zju.edu.cn/ncov/wap/default/code'
 
     def login(self):
         """Login to ZJU platform"""
@@ -109,6 +110,10 @@ class ClockIn(object):
         new_info['gwszdd'] = ""
         new_info['szgjcs'] = ""
 
+        ocr = ddddocr.DdddOcr(show_ad=False)
+        resp = self.sess.get(self.captcha_url,headers=self.headers)
+        captcha = ocr.classification(resp.content)
+        new_info['verifyCode'] = captcha
         # 2021.08.05 Fix 2
         magics = re.findall(r'"([0-9a-f]{32})":\s*"([^\"]+)"', html)
         for item in magics:
