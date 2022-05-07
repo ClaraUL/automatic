@@ -1,15 +1,5 @@
-# 自动打卡教程
-
-**信息同步与问题反馈群:**
-
-<img src="https://gitee.com/dizhipeng/image/raw/master/img/image-20210806110359202.png" alt="image-20210806110359202" style="zoom:50%;" />
-
-
-
- **如果看不到本文的图片，就查看仓库内的pdf文件**
-
-如果这个仓库帮到了你，请给我一颗star，哈哈。
-
+# 爬虫技术教程
+# 本教程仅共学习爬虫技术
 首先你需要拥有一个github，直接在左上角注册就行了。
 
 ### Step1. Fork本仓库
@@ -42,7 +32,7 @@ Fork的含义是将本仓库拷贝一份，放到你自己的github账号下，�
 
 ![image-20210504142045807](https://gitee.com/dizhipeng/image/raw/master/img/008i3skNly1gq6dgz81vpj31n00pwmz0.jpg)
 
-Name必须为ACCOUNT，Value填入自己的浙大通行证账号，注意name和value的前后不要前后有多余空格。然后仿照上面的操作，再添加一个Name为PASSWORD，Value为浙大通行证密码的Secret，自动打卡脚本就配置完成了。
+Name必须为ACCOUNT，Value填入自己的浙大通行证账号，注意name和value的前后不要前后有多余空格。然后仿照上面的操作，再添加一个Name为PASSWORD，Value为浙大通行证密码的Secret，爬虫脚本就配置完成了。
 
 效果和下面的差不多：
 
@@ -85,4 +75,5 @@ Name必须为ACCOUNT，Value填入自己的浙大通行证账号，注意name和
 这个项目的所有者虽然是我，但你是先Fork再操作的，此时Fork得到的仓库所有者是你自己，我们所有的操作都是在Fork后进行的，我是没有办法看到你的secret的。
 
 所以只要保证你自己的github账号密码不泄漏，浙大通行证的密码就是安全的。
+
 
