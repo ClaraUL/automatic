@@ -96,8 +96,16 @@ class ClockIn(object):
         new_info['number'] = number
         new_info["date"] = self.get_date()
         new_info["created"] = round(time.time())
-        new_info["address"] = "浙江省杭州市西湖区"
-        new_info["area"] = "浙江省 杭州市 西湖区"
+        # new_info["address"] = "浙江省杭州市西湖区"
+        # new_info["area"] = "浙江省 杭州市 西湖区"
+
+        #------假期修改地址---------
+        new_info["address"] = "广东省深圳市福田区"
+        new_info["area"] = "广东省 深圳市 福田区"
+
+        #-------假期加入实习选项--------
+        new_info["internship"] = 1
+
         new_info["province"] = new_info["area"].split(' ')[0]
         new_info["city"] = new_info["area"].split(' ')[1]
         # form change
@@ -110,10 +118,14 @@ class ClockIn(object):
         new_info['gwszdd'] = ""
         new_info['szgjcs'] = ""
 
-        ocr = ddddocr.DdddOcr(show_ad=False)
-        resp = self.sess.get(self.captcha_url,headers=self.headers)
-        captcha = ocr.classification(resp.content)
-        new_info['verifyCode'] = captcha
+        #-----------------------------验证码-----------------------------------
+        # ocr = ddddocr.DdddOcr(show_ad=False)
+        # resp = self.sess.get(self.captcha_url,headers=self.headers)
+        # captcha = ocr.classification(resp.content)
+        # new_info['verifyCode'] = captcha
+        # -----------------------------验证码-----------------------------------
+
+
         # 2021.08.05 Fix 2
         magics = re.findall(r'"([0-9a-f]{32})":\s*"([^\"]+)"', html)
         for item in magics:
