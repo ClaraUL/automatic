@@ -98,13 +98,7 @@ class ClockIn(object):
         new_info["created"] = round(time.time())
         # new_info["address"] = "浙江省杭州市西湖区"
         # new_info["area"] = "浙江省 杭州市 西湖区"
-
-        #------假期修改地址---------
-        new_info["address"] = "广东省深圳市福田区"
-        new_info["area"] = "广东省 深圳市 福田区"
-
-        #-------假期加入实习选项--------
-        new_info["internship"] = 1
+        
 
         new_info["province"] = new_info["area"].split(' ')[0]
         new_info["city"] = new_info["area"].split(' ')[1]
